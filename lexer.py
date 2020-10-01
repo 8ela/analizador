@@ -8,7 +8,7 @@ keywords = { 'program', 'var', 'array', 'of', 'procedure', 'begin', 'end',
 
 tokens = (
 'ID','INTCONST','CHARCONST','PLUS','MINUS','TIMES','DIVISION','EQ','NE',
-'LT','GT', 'LE','GT','LPAR','RPAR','LBR','RBR','ASSIGN','DOT','COMMA',
+'LT','GT', 'LE','GE','LPAR','RPAR','LBR','RBR','ASSIGN','DOT','COMMA',
 'SEMICOLON','COLON','RANGE', 'PROGRAM', 'VAR', 'ARRAY', 'OF', 'PROCEDURE', 
 'BEGIN', 'END', 'WRITE', 'READ', 'IF', 'THEN', 'ELSE', 'WHILE', 'DO', 'NOT',
 'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE', 'CHAR'
