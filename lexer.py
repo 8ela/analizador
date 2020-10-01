@@ -9,10 +9,37 @@ keywords = { 'program', 'var', 'array', 'of', 'procedure', 'begin', 'end',
 tokens = (
 'ID','INTCONST','CHARCONST','PLUS','MINUS','TIMES','DIVISION','EQ','NE',
 'LT','GT', 'LE','GT','LPAR','RPAR','LBR','RBR','ASSIGN','DOT','COMMA',
-'SEMICOLON','COLON','RANGE', 'PROGRAM'
+'SEMICOLON','COLON','RANGE', 'PROGRAM', 'VAR', 'ARRAY', 'OF', 'PROCEDURE', 
+'BEGIN', 'END', 'WRITE', 'READ', 'IF', 'THEN', 'ELSE', 'WHILE', 'DO', 'NOT',
+'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE', 'CHAR'
 )
 
 t_PROGRAM = r'program'
+t_VAR = r'var'
+t_ARRAY = r'array'
+t_OF = r'of'
+t_PROCEDURE = r'procedure'
+t_BEGIN = r'begin'
+t_END = r'end'
+t_WRITE = r'write'
+t_READ = r'read'
+t_IF = r'if'
+t_THEN = r'then'
+t_ELSE = r'else'
+t_WHILE = r'while'
+t_DO = r'do'
+t_NOT = r'not'
+t_OR = r'or'
+t_DIV = r'div'
+t_AND = r'and'
+t_CONST = r'const'
+t_TYPE = r'type'
+t_INTEGER = r'integer'
+t_BOOLEAN = r' boolean'
+t_TRUE = r'true'
+t_FALSE = r'false'
+t_CHAR = r'char'
+
 t_CHARCONST = r'\'[^\']*\'|"[^"]*"'
 t_PLUS = r'\+'
 t_MINUS = r'\-'
