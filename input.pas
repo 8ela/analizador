@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 PROGRAM Sort(input, output);
     CONST
         MaxElts = 50;
@@ -32,3 +33,18 @@ PROGRAM Sort(input, output);
         FOR i := 1 TO size DO
             writeln(arr[i])
     END.
+=======
+function max(num1, num2: integer): integer;
+
+var
+   result: integer;
+
+begin
+   if (num1 > num2) then
+      result := num1
+   
+   else
+      result := num2;
+   max := result;
+end;
+>>>>>>> e97dc5cf3e3124deff5c78d090ff2dff983fba04
