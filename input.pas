@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 2ee2168bd05eabf05500551f51231ce2747609cb
 PROGRAM Sort(input, output);
     CONST
         MaxElts = 50;
@@ -10,11 +6,6 @@ PROGRAM Sort(input, output);
 
     VAR
         i, j, tmp, size: integer;
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> 2ee2168bd05eabf05500551f51231ce2747609cb
         arr: IntArrType;
 
     PROCEDURE ReadArr(VAR size: Integer; VAR a: IntArrType);
