@@ -60,8 +60,68 @@ def t_BEGIN(t):
 	r'begin'
 	return t
 
+def t_WRITE(t):
+	r'write'
+	return t
+
+def t_READ(t):
+	r'read'
+	return t
+
+def t_WHILE(t):
+	r'while'
+	return t
+
 def t_INTEGER(t):
 	r'integer'
+	return t
+
+def t_DO(t):
+	r'do'
+	return t
+
+def t_NOT(t):
+	r'not'
+	return t
+
+def t_OR(t):
+	r'or'
+	return t
+
+def t_DIV(t):
+	r'div'
+	return t
+
+def t_AND(t):
+	r'and'
+	return t
+
+def t_CONST(t):
+	r'const'
+	return t
+
+def t_TYPE(t):
+	r'type'
+	return t
+
+def t_INTEGER(t):
+	r'integer'
+	return t
+
+def t_BOOLEAN(t):
+	r'boolean'
+	return t
+
+def t_CHAR(t):
+	r'char'
+	return t
+
+def t_TRUE(t):
+	r'true'
+	return t
+
+def t_FALSE(t):
+	r'false'
 	return t
 
 def t_IF(t):
