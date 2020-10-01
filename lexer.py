@@ -1,18 +1,13 @@
 import ply.lex as lex
 import sys
 
-keywords = { 'program', 'var', 'array', 'of', 'procedure', 'begin', 'end',
-'write', 'read', 'if', 'then', 'else', 'while', 'do', 'not', 'or', 'div',
-'and', 'const', 'type', 'integer', 'boolean', 'true', 'false', 'char'
-}
-
 tokens = (
 'ID','INTCONST','CHARCONST','PLUS','MINUS','TIMES','DIVISION','EQ','NE',
 'LT','GT', 'LE','GE','LPAR','RPAR','LBR','RBR','ASSIGN','DOT','COMMA',
 'SEMICOLON','COLON','RANGE', 'PROGRAM', 'VAR', 'ARRAY', 'OF', 'PROCEDURE', 
 'BEGIN', 'END', 'WRITE', 'READ', 'IF', 'THEN', 'ELSE', 'WHILE', 'DO', 'NOT',
-'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE', 'CHAR'
-)
+'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE',
+'CHAR')
 
 t_CHARCONST = r'\'[^\']*\'|"[^"]*"'
 t_PLUS = r'\+'
@@ -93,7 +88,7 @@ def t_newline(t):
     print ("new line")
 
 def t_ID(t):
-    r'\w(_\d\w)*'
+    r'\w+(_\d\w)*'
     return t
 
 def t_INTCONST(t):
