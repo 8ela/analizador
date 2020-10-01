@@ -14,6 +14,7 @@ tokens = (
 'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE', 'CHAR'
 )
 
+'''
 t_PROGRAM = r'program'
 t_VAR = r'var'
 t_ARRAY = r'array'
@@ -39,7 +40,7 @@ t_BOOLEAN = r' boolean'
 t_TRUE = r'true'
 t_FALSE = r'false'
 t_CHAR = r'char'
-
+'''
 t_CHARCONST = r'\'[^\']*\'|"[^"]*"'
 t_PLUS = r'\+'
 t_MINUS = r'\-'
@@ -63,6 +64,55 @@ t_SEMICOLON = r';'
 t_COLON = r':'
 
 t_ignore = " \t"
+
+
+
+# funciones keywords
+def t_PROGRAM(t):
+	r'program'
+	return t
+
+def t_VAR(t):
+	r'var'
+	return t
+
+def t_ARRAY(t):
+	r'array'
+	return t
+
+def t_OF(t):
+	r'of'
+	return t
+
+def t_PROCEDURE(t):
+	r'procedure'
+	return t
+
+def t_BEGIN(t):
+	r'begin'
+	return t
+
+def t_INTEGER(t):
+	r'integer'
+	return t
+
+def t_IF(t):
+	r'if'
+	return t
+
+def t_THEN(t):
+	r'then'
+	return t
+
+def t_ELSE(t):
+	r'else'
+	return t
+
+def t_END(t):
+	r'end'
+	return t
+
+
 
 def t_newline(t):
     r'\n+'
