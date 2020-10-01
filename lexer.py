@@ -62,6 +62,13 @@ t_COMMA = r','
 t_SEMICOLON = r';'
 t_COLON = r':'
 
+t_ignore = " \t"
+
+def t_newline(t):
+    r'\n+'
+    t.lexer.lineno += len(t.value)
+    print ("new line")
+
 def t_ID(t):
     r'\w(_\d\w)*'
     return t
@@ -91,7 +98,7 @@ if __name__ == "__main__":
 	else:
 		end = 'input.pas'
 	f = open(end, 'r')
-	data = f.read()
+	data = f.read().replace(" ","")
 	print(data)
 	lexer.input(data)
 	test(data,lexer)
