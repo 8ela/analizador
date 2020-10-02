@@ -7,7 +7,7 @@ tokens = (
 'SEMICOLON','COLON','RANGE', 'PROGRAM', 'VAR', 'ARRAY', 'OF', 'PROCEDURE', 
 'BEGIN', 'END', 'WRITE', 'READ', 'IF', 'THEN', 'ELSE', 'WHILE', 'DO', 'NOT',
 'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE',
-'CHAR')
+'CHAR', 'ABSOLUTE', 'ASM', 'CASE')
 
 t_CHARCONST = r'\'[^\']*\'|"[^"]*"'
 t_PLUS = r'\+'
@@ -32,12 +32,20 @@ t_SEMICOLON = r';'
 t_COLON = r':'
 
 t_ignore = " \t"
-
+t_ignore_comment = r'\(\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*?\*+\)|{[^{]*}'
 
 
 # funciones keywords
 def t_PROGRAM(t):
-	r'program'
+	r'[program|PROGRAM]'
+	return t
+
+def t_ABSOLUTE(t):
+	r'ABSOLUTE'
+	return t
+
+def t_ASM(t):
+	r'ASM'
 	return t
 
 def t_VAR(t):
@@ -45,7 +53,11 @@ def t_VAR(t):
 	return t
 
 def t_ARRAY(t):
-	r'array'
+	r'ARRAY'
+	return t
+
+def t_CASE(t):
+	r'CASE'
 	return t
 
 def t_OF(t):
@@ -57,7 +69,7 @@ def t_PROCEDURE(t):
 	return t
 
 def t_BEGIN(t):
-	r'begin'
+	r'BEGIN'
 	return t
 
 def t_WRITE(t):
@@ -70,10 +82,6 @@ def t_READ(t):
 
 def t_WHILE(t):
 	r'while'
-	return t
-
-def t_INTEGER(t):
-	r'integer'
 	return t
 
 def t_DO(t):
@@ -93,15 +101,15 @@ def t_DIV(t):
 	return t
 
 def t_AND(t):
-	r'and'
+	r'AND'
 	return t
 
 def t_CONST(t):
-	r'const'
+	r'[const|CONST]'
 	return t
 
 def t_TYPE(t):
-	r'type'
+	r'[type|TYPE]'
 	return t
 
 def t_INTEGER(t):
