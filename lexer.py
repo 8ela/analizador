@@ -7,7 +7,11 @@ tokens = (
 'SEMICOLON','COLON','RANGE', 'PROGRAM', 'VAR', 'ARRAY', 'OF', 'PROCEDURE', 
 'BEGIN', 'END', 'WRITE', 'READ', 'IF', 'THEN', 'ELSE', 'WHILE', 'DO', 'NOT',
 'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE',
-'CHAR', 'ABSOLUTE', 'ASM', 'CASE')
+'CHAR', 'ABSOLUTE', 'ASM', 'CASE', 'DESTRUCTOR', 'DOWNTO', 'FUNCTION', 'IN',
+'INTERFACE', 'LABEL', 'NIL', 'OBJECT', 'PRIVATE', 'REPEAT', 'SHL', 'STRING',
+'TO', 'UNIT', 'USES', 'VIRTUAL', 'WITH', 'CONSTRUCTOR', 'EXTERNAL', 'FILE',
+'FORWARD', 'GOTO', 'IMPLEMENTATION', 'INLINE', 'INTERRUPT', 'MOD', 'PACKED',
+'RECORD', 'SET', 'SHR', 'UNTIL', 'XOR')
 
 t_CHARCONST = r'\'[^\']*\'|"[^"]*"'
 t_PLUS = r'\+'
@@ -37,15 +41,7 @@ t_ignore_comment = r'\(\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*?\*+\)|{[^{]*}'
 
 # funciones keywords
 def t_PROGRAM(t):
-	r'[program|PROGRAM]'
-	return t
-
-def t_ABSOLUTE(t):
-	r'ABSOLUTE'
-	return t
-
-def t_ASM(t):
-	r'ASM'
+	r'program|PROGRAM'
 	return t
 
 def t_VAR(t):
@@ -53,11 +49,7 @@ def t_VAR(t):
 	return t
 
 def t_ARRAY(t):
-	r'ARRAY'
-	return t
-
-def t_CASE(t):
-	r'CASE'
+	r'array'
 	return t
 
 def t_OF(t):
@@ -69,7 +61,7 @@ def t_PROCEDURE(t):
 	return t
 
 def t_BEGIN(t):
-	r'BEGIN'
+	r'begin'
 	return t
 
 def t_WRITE(t):
@@ -105,11 +97,11 @@ def t_AND(t):
 	return t
 
 def t_CONST(t):
-	r'[const|CONST]'
+	r'const|CONST'
 	return t
 
 def t_TYPE(t):
-	r'[type|TYPE]'
+	r'type|TYPE'
 	return t
 
 def t_INTEGER(t):
@@ -148,8 +140,147 @@ def t_END(t):
 	r'end'
 	return t
 
+def t_ABSOLUTE(t):
+	r'absolute'
+	return t
 
+def t_ASM(t):
+	r'asm'
+	return t
 
+def t_CASE(t):
+	r'case'
+	return t
+
+def t_DESTRUCTOR(t):
+	r'destructor'
+	return t
+
+def t_DOWNTO(t):
+	r'downto'
+	return t
+
+def t_FUNCTION(t):
+	r'function'
+	return t
+
+def t_IN(t):
+	r'in'
+	return t
+
+def t_INTERFACE(t):
+	r'interface'
+	return t
+
+def t_LABEL(t):
+	r'label'
+	return t
+
+def t_NIL(t):
+	r'nil'
+	return t
+
+def t_OBJECT(t):
+	r'object'
+	return t
+
+def t_PRIVATE(t):
+	r'private'
+	return t
+
+def t_REPEAT(t):
+	r'repeat'
+	return t
+
+def t_SHL(t):
+	r'shl'
+	return t
+
+def t_STRING(t):
+	r'string'
+	return t
+
+def t_TO(t):
+	r'to'
+	return t
+
+def t_UNIT(t):
+	r'unit'
+	return t
+
+def t_USES(t):
+	r'uses'
+	return t
+
+def t_VIRTUAL(t):
+	r'virtual'
+	return t
+
+def t_WITH(t):
+	r'with'
+	return t
+
+def t_CONTRUCTOR(t):
+	r'constructor'
+	return t
+
+def t_EXTERNAL(t):
+	r'external'
+	return t
+
+def t_FILE(t):
+	r'file'
+	return t
+
+def t_FORWARD(t):
+	r'forward'
+	return t
+
+def t_GOTO(t):
+	r'goto'
+	return t
+
+def t_IMPLEMENTATION(t):
+	r'implememtation'
+	return t
+
+def t_INLINE(t):
+	r'inline'
+	return t
+
+def t_INTERRUPT(t):
+	r'interrupt'
+	return t
+
+def t_MOD(t):
+	r'mod'
+	return t
+
+def t_PACKED(t):
+	r'packed'
+	return t
+
+def t_RECORD(t):
+	r'record'
+	return t
+
+def t_SET(t):
+	r'set'
+	return t
+
+def t_SHR(t):
+	r'shr'
+	return t
+
+def t_UNTIL(t):
+	r'until'
+	return t
+
+def t_XOR(t):
+	r'xor'
+	return t
+
+# ---------------
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
