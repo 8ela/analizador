@@ -2,16 +2,28 @@ import ply.lex as lex
 import sys
 
 tokens = (
-'ID','INTCONST','CHARCONST','PLUS','MINUS','TIMES','DIVISION','EQ','NE',
-'LT','GT', 'LE','GE','LPAR','RPAR','LBR','RBR','ASSIGN','DOT','COMMA',
-'SEMICOLON','COLON','RANGE', 'PROGRAM', 'VAR', 'ARRAY', 'OF', 'PROCEDURE', 
-'BEGIN', 'END', 'WRITE', 'READ', 'IF', 'THEN', 'ELSE', 'WHILE', 'DO', 'NOT',
-'OR', 'DIV', 'AND', 'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE', 'FALSE',
-'CHAR', 'ABSOLUTE', 'ASM', 'CASE', 'DESTRUCTOR', 'DOWNTO', 'FUNCTION', 'IN',
+
+# PALABRAS RESERVADAS
+'ABSOLUTE', 'AND', 'ARRAY', 'CHARCONST', 'RANGE', 'PROGRAM', 'VAR',  'OF', 
+'PROCEDURE', 'BEGIN', 'END', 'WRITE', 'READ', 'IF', 'THEN', 'ELSE', 'WHILE',
+'DO', 'NOT', 'OR', 'DIV',  'CONST', 'TYPE', 'INTEGER', 'BOOLEAN', 'TRUE',
+'FALSE', 'CHAR', 'ASM', 'CASE', 'DESTRUCTOR', 'DOWNTO', 'FUNCTION', 'IN',
 'INTERFACE', 'LABEL', 'NIL', 'OBJECT', 'PRIVATE', 'REPEAT', 'SHL', 'STRING',
 'TO', 'UNIT', 'USES', 'VIRTUAL', 'WITH', 'CONSTRUCTOR', 'EXTERNAL', 'FILE',
 'FORWARD', 'GOTO', 'IMPLEMENTATION', 'INLINE', 'INTERRUPT', 'MOD', 'PACKED',
-'RECORD', 'SET', 'SHR', 'UNTIL', 'XOR')
+'RECORD', 'SET', 'SHR', 'UNTIL', 'XOR', 'FOR', 'REAL', 'CHAR', 'BOOLEAN',
+
+
+# SIMBOLOS
+'PLUS','MINUS','TIMES','DIVISION','EQ','NE', 'LT','GT', 'LE','GE','LPAR',
+'RPAR','LBR','RBR','ASSIGN','DOT','COMMA', 'SEMICOLON','COLON', 
+
+# IDENTIFICADOR
+'ID',
+
+# NUMEROS
+'NUMBER',
+)
 
 t_CHARCONST = r'\'[^\']*\'|"[^"]*"'
 t_PLUS = r'\+'
@@ -41,55 +53,67 @@ t_ignore_comment = r'\(\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*?\*+\)|{[^{]*}'
 
 # funciones keywords
 def t_PROGRAM(t):
-	r'program|PROGRAM'
+	r'PROGRAM'
+	return t
+
+def t_REAL(t):
+	r'real'
+	return t
+
+def t_FOR(t):
+	r'FOR'
 	return t
 
 def t_VAR(t):
-	r'var'
+	r'VAR'
 	return t
 
 def t_ARRAY(t):
-	r'array'
+	r'ARRAY'
 	return t
 
 def t_OF(t):
-	r'of'
+	r'OF'
 	return t
 
 def t_PROCEDURE(t):
-	r'procedure'
+	r'PROCEDURE'
 	return t
 
 def t_BEGIN(t):
-	r'begin'
+	r'BEGIN'
 	return t
 
 def t_WRITE(t):
-	r'write'
+	r'WRITE'
 	return t
 
 def t_READ(t):
-	r'read'
+	r'READ'
 	return t
 
 def t_WHILE(t):
-	r'while'
+	r'WHILE'
+	return t
+
+def t_DOWNTO(t):
+	r'DOWNTO'
 	return t
 
 def t_DO(t):
-	r'do'
+	r'DO'
 	return t
 
 def t_NOT(t):
-	r'not'
+	r'NOT'
 	return t
 
 def t_OR(t):
-	r'or'
+	r'OR'
 	return t
 
 def t_DIV(t):
-	r'div'
+	r'DIV'
 	return t
 
 def t_AND(t):
@@ -97,11 +121,11 @@ def t_AND(t):
 	return t
 
 def t_CONST(t):
-	r'const|CONST'
+	r'CONST'
 	return t
 
 def t_TYPE(t):
-	r'type|TYPE'
+	r'TYPE'
 	return t
 
 def t_INTEGER(t):
@@ -117,167 +141,163 @@ def t_CHAR(t):
 	return t
 
 def t_TRUE(t):
-	r'true'
+	r'TRUE'
 	return t
 
 def t_FALSE(t):
-	r'false'
+	r'FALSE'
 	return t
 
 def t_IF(t):
-	r'if'
+	r'IF'
 	return t
 
 def t_THEN(t):
-	r'then'
+	r'THEN'
 	return t
 
 def t_ELSE(t):
-	r'else'
+	r'ELSE'
 	return t
 
 def t_END(t):
-	r'end'
+	r'END'
 	return t
 
 def t_ABSOLUTE(t):
-	r'absolute'
+	r'ABSOLUTE'
 	return t
 
 def t_ASM(t):
-	r'asm'
+	r'ASM'
 	return t
 
 def t_CASE(t):
-	r'case'
+	r'CASE'
 	return t
 
 def t_DESTRUCTOR(t):
-	r'destructor'
-	return t
-
-def t_DOWNTO(t):
-	r'downto'
+	r'DESTRUCTOR'
 	return t
 
 def t_FUNCTION(t):
-	r'function'
+	r'FUNCTION'
 	return t
 
 def t_IN(t):
-	r'in'
+	r'IN'
 	return t
 
 def t_INTERFACE(t):
-	r'interface'
+	r'INTERFACE'
 	return t
 
 def t_LABEL(t):
-	r'label'
+	r'LABEL'
 	return t
 
 def t_NIL(t):
-	r'nil'
+	r'NIL'
 	return t
 
 def t_OBJECT(t):
-	r'object'
+	r'OBJECT'
 	return t
 
 def t_PRIVATE(t):
-	r'private'
+	r'PRIVATE'
 	return t
 
 def t_REPEAT(t):
-	r'repeat'
+	r'REPEAT'
 	return t
 
 def t_SHL(t):
-	r'shl'
+	r'SHL'
 	return t
 
 def t_STRING(t):
-	r'string'
+	r'STRING'
 	return t
 
 def t_TO(t):
-	r'to'
+	r'TO'
 	return t
 
 def t_UNIT(t):
-	r'unit'
+	r'UNIT'
 	return t
 
 def t_USES(t):
-	r'uses'
+	r'USES'
 	return t
 
 def t_VIRTUAL(t):
-	r'virtual'
+	r'VIRTUAL'
 	return t
 
 def t_WITH(t):
-	r'with'
+	r'WITH'
 	return t
 
 def t_CONTRUCTOR(t):
-	r'constructor'
+	r'CONSTRUCTOR'
 	return t
 
 def t_EXTERNAL(t):
-	r'external'
+	r'EXTERNAL'
 	return t
 
 def t_FILE(t):
-	r'file'
+	r'FILE'
 	return t
 
 def t_FORWARD(t):
-	r'forward'
+	r'FORWARD'
 	return t
 
 def t_GOTO(t):
-	r'goto'
+	r'GOTO'
 	return t
 
 def t_IMPLEMENTATION(t):
-	r'implememtation'
+	r'IMPLEMENTATION'
 	return t
 
 def t_INLINE(t):
-	r'inline'
+	r'INLINE'
 	return t
 
 def t_INTERRUPT(t):
-	r'interrupt'
+	r'INTERRUPT'
 	return t
 
 def t_MOD(t):
-	r'mod'
+	r'MOD'
 	return t
 
 def t_PACKED(t):
-	r'packed'
+	r'PACKED'
 	return t
 
 def t_RECORD(t):
-	r'record'
+	r'RECORD'
 	return t
 
 def t_SET(t):
-	r'set'
+	r'SET'
 	return t
 
 def t_SHR(t):
-	r'shr'
+	r'SHR'
 	return t
 
 def t_UNTIL(t):
-	r'until'
+	r'UNTIL'
 	return t
 
 def t_XOR(t):
-	r'xor'
+	r'XOR'
 	return t
 
 # ---------------
@@ -287,13 +307,13 @@ def t_newline(t):
     print ("new line")
 
 def t_ID(t):
-    r'\w+(_\d\w)*'
+    r'[a-zA-Z_][a-zA-Z_0-9]*'
     return t
 
-def t_INTCONST(t):
-	r'[0-9]+'
-	t.value = int(t.value)
-	return t
+def t_NUMBER(t):
+    r'\d+'
+    t.value = float(t.value)
+    return t
 
 def t_error(t):
 	print("Lexical error: {}".format(str(t.value[0])))
@@ -316,6 +336,6 @@ if __name__ == "__main__":
 		end = 'input.pas'
 	f = open(end, 'r')
 	data = f.read().replace(" ","")
-	print(data)
+	#print(data)
 	lexer.input(data)
 	test(data,lexer)

@@ -8,7 +8,7 @@ PROGRAM Sort(input, output);
         MaxElts = 50;
     TYPE
         (* Type of the element array. *)
-        IntArrType = ARRAY [1..MaxElts] OF Integer;
+        IntArrType = ARRAY [1..MaxElts] OF integer;
 
     VAR
         (* Indexes, exchange temp, array size. *)
@@ -18,7 +18,7 @@ PROGRAM Sort(input, output);
         arr: IntArrType;
 
     (* Read in the integers. *)
-    PROCEDURE ReadArr(VAR size: Integer; VAR a: IntArrType);
+    PROCEDURE ReadArr(VAR size: integer; VAR a: IntArrType);
         BEGIN
             size := 1;
             WHILE NOT eof DO BEGIN
