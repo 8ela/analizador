@@ -17,10 +17,15 @@
 
 - Para clonar el repositorio, utilizar el comando `git clonehttps://github.com/santiagoSSAA/pascal_lexer.git`.
 
+### Instalar el módulo de Ply
+
+- Teniendo previamente instalado pip en el equipo, `pip install ply`.
+- Utilizar el comando `pip list` para confirmar que el módulo ha sido instalado exitosamente.
+
 ### ejecutar el código
 
 - Una vez clonado el repositorio, ejecutamos el comando `cd ruta_destino/pascal_lexer`
-- Para ejecutar el código, utilizar el comando . ` python3 lexer.py input.pas` en caso de tener python 3x, y ` python lexer.py input.pas` en caso de tener python 2.7.
+- Para ejecutar el código, utilizar el comando . `python3 lexer.py input.pas` en caso de tener python 3x, y `python lexer.py input.pas` en caso de tener python 2.7.
 
 ---
 
