@@ -11,6 +11,19 @@
 
 ---
 
+## Instalación
+
+### Clonar el repositorio
+
+- Para clonar el repositorio, utilizar el comando `git clonehttps://github.com/santiagoSSAA/pascal_lexer.git`.
+
+### ejecutar el código
+
+- Una vez clonado el repositorio, ejecutamos el comando `cd ruta_destino/pascal_lexer`
+- Para ejecutar el código, utilizar el comando . ` python3 lexer.py input.pas` en caso de tener python 3x, y ` python lexer.py input.pas` en caso de tener python 2.7.
+
+---
+
 ## Objetivo general
 
 Crear la primera fase de un compilador para un lenguaje determinado (pascal), que consiste en la creación de un programa que recibe como entrada un archivo que contiene una secuencia de caracteres, y produce una salida compuesta de tokens (componentes léxicos) o símbolos. 
