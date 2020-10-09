@@ -25,7 +25,7 @@
 ### ejecutar el código
 
 - Una vez clonado el repositorio, ejecutamos el comando `cd ruta_destino/pascal_lexer`
-- Para ejecutar el código, utilizar el comando . `python3 lexer.py input.pas` en caso de tener python 3x, y `python lexer.py input.pas` en caso de tener python 2.7.
+- Para ejecutar el código, utilizar el comando . `python3 lexer.py Test/input.pas` en caso de tener python 3x, y `python lexer.py Test/input.pas` en caso de tener python 2.7.
 
 ---
 
