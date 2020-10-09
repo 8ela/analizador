@@ -337,5 +337,4 @@ if __name__ == "__main__":
 	f = open(end, 'r')
 	data = f.read().replace(" ","")
 	#print(data)
-	lexer.input(data)
 	test(data,lexer)
